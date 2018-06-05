@@ -50,7 +50,7 @@ public class OoOAlertDialog {
         private Animation animation;
         private OnClickListener positiveButtonListener, negativeButtonListener;
         private int positiveButtonColor, negativeButtonColor, backgroundColor;
-        private boolean cancelable;
+        private boolean cancelable = true;
 
         public Builder(Activity activity) {
             this.activity = activity;
@@ -87,16 +87,6 @@ public class OoOAlertDialog {
             this.animation = animation;
             return this;
         }
-
-//        public Builder setOnClickListenerPositiveButton(OnClickListener positiveButtonListener) {
-//            this.positiveButtonListener = positiveButtonListener;
-//            return this;
-//        }
-
-//        public Builder setOnClickListenerNegativeButton(OnClickListener negativeButtonListener) {
-//            this.negativeButtonListener = negativeButtonListener;
-//            return this;
-//        }
 
         public Builder setPositiveButtonColor(int positiveButtonColor) {
             this.positiveButtonColor = positiveButtonColor;
