@@ -20,32 +20,65 @@ Adicione ao `build.gradle` _(Module: app)_:
 
 ```gradle
 dependencies {
-        implementation 'com.github.Joinersa:OoOAlertDialog:v1.1'
+        implementation 'com.github.Joinersa:OoOAlertDialog:v1.1.1'
 }
 ```
 
-<h2>Usando o OoOAlertDialog</h2>
+## Utilizando o OoOAlertDialog
 
 ```java
 new OoOAlertDialog.Builder(MainActivity.this)
                         .setTitle("OoOAlertDialog")
                         .setMessage("Deseja fechar este OoOAlertDialog?")
+                        .setImage(R.drawable.my_imagem)
                         .setAnimation(Animation.POP)
                         .setPositiveButton("Fechar", null)
+                        .setNegativeButton("Mensagem", new OnClickListener() {
+                            @Override
+                            public void onClick() {
+                                Toast.makeText(MainActivity.this, "mensagem", Toast.LENGTH_SHORT).show();
+                            }
+                        })
                         .build();
 ```
 
-#### Animation
+## Funções
 
-Existem 3 tipos de animações pré-definidas que você pode usar: `POP`,` SLIDE` e `SIDE`
+* Animação:
+
+Existem 3 tipos de animações pré-definidas que você pode usar: `POP`,` SLIDE` e `SIDE`. A animação pode ser definida com `setAnimation(Animation animation)`.
+
+* Imagem:
+
+É possível setar uma imagem no topo da janela de diálogo com o método `setImage(int id)`.
+
+* Título e mensagem
+
+Título e mensagem são setados respectivamente com `setTitle(String title)` e `setMessage(String message)`.
+
+* Cancelável
+
+A janela de diálogo pode ou não ser cancelável utilizando o método `setCancelable(boolean cancelable)`.
+
+* Botões (Positivo e Negativo)
+
+Existem dois tipos de botões que podem ou não ser utilizados. Para criar os botões, com eventos de click ou não, basta utilizar os métodos, `setPositiveButton(String text, OnClickListener listener)` para o botão positivo e `setNegativeButton(String text, OnClickListener listener)` para o botão negativo.
+
+* Cor de background da janela
+
+É possível mudar a cor da janela de diálogo com o método: `setBackgroundColor(int color)`.
+
+* Cor dos Botões
+
+Os botões positivo e negativo podem ter suas cores alteradas através dos métodos: `setPositiveButtonColor(int color)` e `setNegativeButtonColor(int color)`.
 
 #### Contatos
- Joiner Sá
+
 * [Facebook](https://www.facebook.com/joiner.sa)
 * [WhatsApp (+55 91 92228133)](https://api.whatsapp.com/send?phone=+559192228133)
 * [LinkedIn](https://www.linkedin.com/in/joiner-s%C3%A1-367342b7/)
 
-## License
+## Licença
 
 * [Apache Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
 
