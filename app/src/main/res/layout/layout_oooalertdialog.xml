@@ -26,8 +26,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:scaleType="centerCrop"
+                android:visibility="gone"
                 android:src="@null"/>
-
 
 
             <ScrollView
@@ -49,6 +49,7 @@
                         android:ellipsize="end"
                         android:maxLines="2"
                         android:padding="6dp"
+                        android:layout_marginBottom="6dp"
                         android:text="OoO AlertDialog"
                         android:textAlignment="center"
                         android:textColor="@color/titleColor"
@@ -67,6 +68,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="top"
+                        android:layout_marginTop="6dp"
                         android:paddingBottom="10dp"
                         android:paddingEnd="10dp"
                         android:paddingLeft="10dp"
