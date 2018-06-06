@@ -117,6 +117,7 @@ public class OoOAlertDialog {
             LinearLayout llButtons;
             CardView cvBackgroundAlertdialog;
 
+            // Instancia Dialog e seta o tema com a animação caso haja.
             if (animation == Animation.POP) {
                 dialog = new Dialog(activity, R.style.PopTheme);
             } else if (animation == Animation.SIDE) {
