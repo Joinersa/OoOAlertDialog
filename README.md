@@ -7,7 +7,9 @@
 
 ## Pré-requisitos
 
-Adicione isto em seu arquivo root `build.gradle` _(Project: name_project)_:
+* É necessário que o `compileSdkVersion` seja maior ou igual a <b>`26`</b>.
+
+* Adicione isto em seu arquivo root `build.gradle` _(Project: name_project)_:
 ```gradle
 allprojects {
   repositories {
@@ -16,7 +18,7 @@ allprojects {
   }
 }
 ```
-Adicione ao `build.gradle` _(Module: app)_:
+* Adicione ao `build.gradle` _(Module: app)_:
 
 ```gradle
 dependencies {
@@ -44,31 +46,31 @@ new OoOAlertDialog.Builder(MainActivity.this)
 
 ## Funções
 
-* Animação:
+* <b>Animação:</b>
 
 Existem 3 tipos de animações pré-definidas que você pode usar: `POP`,` SLIDE` e `SIDE`. A animação pode ser definida com `setAnimation(Animation animation)`.
 
-* Imagem:
+* <b>Imagem:</b>
 
 É possível setar uma imagem no topo da janela de diálogo com o método `setImage(int id)`.
 
-* Título e mensagem
+* <b>Título e mensagem:</b>
 
 Título e mensagem são setados respectivamente com `setTitle(String title)` e `setMessage(String message)`.
 
-* Cancelável
+* <b>Cancelável:</b>
 
 A janela de diálogo pode ou não ser cancelável utilizando o método `setCancelable(boolean cancelable)`.
 
-* Botões (Positivo e Negativo)
+* <b>Botões (Positivo e Negativo):</b>
 
 Existem dois tipos de botões que podem ou não ser utilizados. Para criar os botões, com eventos de click ou não, basta utilizar os métodos, `setPositiveButton(String text, OnClickListener listener)` para o botão positivo e `setNegativeButton(String text, OnClickListener listener)` para o botão negativo.
 
-* Cor de background da janela
+* <b>Cor de background da janela:</b>
 
 É possível mudar a cor da janela de diálogo com o método: `setBackgroundColor(int color)`.
 
-* Cor dos Botões
+* <b>Cor dos Botões:</b>
 
 Os botões positivo e negativo podem ter suas cores alteradas através dos métodos: `setPositiveButtonColor(int color)` e `setNegativeButtonColor(int color)`.
 
