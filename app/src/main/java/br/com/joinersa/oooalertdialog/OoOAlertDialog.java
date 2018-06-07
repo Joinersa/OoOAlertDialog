@@ -143,91 +143,116 @@ public class OoOAlertDialog {
             llButtons = dialog.findViewById(R.id.ll_buttons);
 
             // Verifica mensagem
-            if (message != null && !message.equals("")) {
-                tvMessage.setVisibility(View.VISIBLE);
-                tvMessage.setText(message);
+            if (message != null) {
+                // Verifica mais uma vez porque com o && iria verificar se a straing seria vazia através do equals().
+                // Dessa forma só verifica se o objeto existir. Evitando NullPointerException
+                if (!message.equals("")) {
+                    tvMessage.setVisibility(View.VISIBLE);
+                    tvMessage.setText(message);
+                } else {
+                    tvMessage.setVisibility(View.GONE);
+                }
+
             } else {
                 tvMessage.setVisibility(View.GONE);
             }
 
             // Verifica titulo
-            if (title != null && !title.equals("")) {
-                viewSeparator.setVisibility(View.VISIBLE);
-                tvTitle.setVisibility(View.VISIBLE);
-                tvTitle.setText(title);
+            if (title != null) {
+                // Verifica mais uma vez porque com o && iria verificar se a straing seria vazia através do equals().
+                // Dessa forma só verifica se o objeto existir. Evitando NullPointerException
+                if (!title.equals("")) {
+                    viewSeparator.setVisibility(View.VISIBLE);
+                    tvTitle.setVisibility(View.VISIBLE);
+                    tvTitle.setText(title);
+                } else {
+                    viewSeparator.setVisibility(View.GONE);
+                    tvTitle.setVisibility(View.GONE);
+                }
             } else {
                 viewSeparator.setVisibility(View.GONE);
                 tvTitle.setVisibility(View.GONE);
             }
 
             // Verificação para esconder layout dos botões
-            if (positiveButtonText != null || negativeButtonText != null || !positiveButtonText.equals("") || !negativeButtonText.equals("")) {
+            if (positiveButtonText != null || negativeButtonText != null) {
 
                 llButtons.setVisibility(View.VISIBLE);
 
                 // Verifica o texto do botão, ele define se existe o botão
-                if (positiveButtonText != null && !positiveButtonText.equals("")) {
+                if (positiveButtonText != null) {
 
-                    btPositive.setVisibility(View.VISIBLE);
-                    btPositive.setText(positiveButtonText);
+                    if (!positiveButtonText.equals("")) {
 
-                    // Verifica a COR
-                    if (positiveButtonColor != 0) {
-                        GradientDrawable bgShape = (GradientDrawable) btPositive.getBackground();
-                        bgShape.setColor(positiveButtonColor);
-                    }
+                        btPositive.setVisibility(View.VISIBLE);
+                        btPositive.setText(positiveButtonText);
 
-                    // Verifica o LISTENER
-                    if (positiveButtonListener != null) {
-                        btPositive.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                positiveButtonListener.onClick();
-                                dialog.dismiss();
-                            }
-                        });
+                        // Verifica a COR
+                        if (positiveButtonColor != 0) {
+                            GradientDrawable bgShape = (GradientDrawable) btPositive.getBackground();
+                            bgShape.setColor(positiveButtonColor);
+                        }
+
+                        // Verifica o LISTENER
+                        if (positiveButtonListener != null) {
+                            btPositive.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    positiveButtonListener.onClick();
+                                    dialog.dismiss();
+                                }
+                            });
+                        } else {
+                            btPositive.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    dialog.dismiss();
+                                }
+                            });
+                        }
                     } else {
-                        btPositive.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                dialog.dismiss();
-                            }
-                        });
+                        btPositive.setVisibility(View.GONE); // invisivel sem espaço
                     }
+
                 } else {
                     btPositive.setVisibility(View.GONE); // invisivel sem espaço
                 }
 
                 // Verifica o texto do botão, ele define se existe o botão
-                if (negativeButtonText != null && !negativeButtonText.equals("")) {
+                if (negativeButtonText != null) {
 
-                    btNegative.setVisibility(View.VISIBLE);
-                    btNegative.setText(negativeButtonText);
+                    if (!negativeButtonText.equals("")) {
 
-                    // Verifica a COR
-                    if (negativeButtonColor != 0) {
-                        GradientDrawable bgShape = (GradientDrawable) btNegative.getBackground();
-                        bgShape.setColor(negativeButtonColor);
-                    }
+                        btNegative.setVisibility(View.VISIBLE);
+                        btNegative.setText(negativeButtonText);
 
-                    // Verifica o LISTENER
-                    if (negativeButtonListener != null) {
+                        // Verifica a COR
+                        if (negativeButtonColor != 0) {
+                            GradientDrawable bgShape = (GradientDrawable) btNegative.getBackground();
+                            bgShape.setColor(negativeButtonColor);
+                        }
 
-                        btNegative.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                negativeButtonListener.onClick();
-                                dialog.dismiss();
-                            }
-                        });
+                        // Verifica o LISTENER
+                        if (negativeButtonListener != null) {
+
+                            btNegative.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    negativeButtonListener.onClick();
+                                    dialog.dismiss();
+                                }
+                            });
+                        } else {
+
+                            btNegative.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    dialog.dismiss();
+                                }
+                            });
+                        }
                     } else {
-
-                        btNegative.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                dialog.dismiss();
-                            }
-                        });
+                        btNegative.setVisibility(View.GONE);
                     }
 
                 } else {
