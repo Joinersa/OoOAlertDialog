@@ -24,7 +24,7 @@ allprojects {
 
 ```gradle
 dependencies {
-        implementation 'com.github.Joinersa:OoOAlertDialog:1.0.0'
+        implementation 'com.github.Joinersa:OoOAlertDialog:1.0.1'
 }
 ```
 
