@@ -73,7 +73,7 @@
                         android:paddingEnd="10dp"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="Mensagem do OoOAlertDialog..."
+                        android:text="Mensagem..."
                         android:textColor="@color/messageColor"
                         android:textSize="16sp"
                         android:textStyle="bold" />
