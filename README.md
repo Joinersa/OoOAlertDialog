@@ -5,7 +5,7 @@
 [![](https://jitpack.io/v/Joinersa/OoOAlertDialog.svg)](https://jitpack.io/#Joinersa/OoOAlertDialog)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-<img src="https://github.com/Joinersa/OoOAlertDialog/gif.gif">
+<img src="https://github.com/Joinersa/OoOAlertDialog/blob/master/gif.gif">
 
 ## Pré-requisitos
 
@@ -48,9 +48,9 @@ new OoOAlertDialog.Builder(MainActivity.this)
 
 ## Scrennshots
 
-<img src="https://github.com/Joinersa/OoOAlertDialog/scrennshot_1.png">
+<img src="https://github.com/Joinersa/OoOAlertDialog/blob/master/scrennshot_1.png">
 
-<img src="https://github.com/Joinersa/OoOAlertDialog/scrennshot_2.png">
+<img src="https://github.com/Joinersa/OoOAlertDialog/blob/master/scrennshot_2.png">
 
 ## Funções
 
