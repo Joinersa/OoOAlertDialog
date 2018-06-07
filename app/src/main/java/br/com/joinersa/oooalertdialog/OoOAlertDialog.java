@@ -17,7 +17,7 @@ import android.widget.TextView;
  * Created by Joiner on 04/06/18.
  */
 
-public class OoOAlertDialog1 {
+public class OoOAlertDialog {
 
     private String title, message, positiveButtonText, negativeButtonText;
     private Activity activity;
@@ -27,7 +27,7 @@ public class OoOAlertDialog1 {
     private int positiveButtonColor, negativeButtonColor, backgroundColor;
     private boolean cancelable;
 
-    public OoOAlertDialog1(Builder builder) {
+    public OoOAlertDialog(Builder builder) {
         this.title = builder.title;
         this.message = builder.message;
         this.positiveButtonText = builder.positiveButtonText;
@@ -108,7 +108,7 @@ public class OoOAlertDialog1 {
             return this;
         }
 
-        public OoOAlertDialog1 build() {
+        public OoOAlertDialog build() {
             TextView tvMessage, tvTitle;
             ImageView ivImage;
             AppCompatButton btNegative, btPositive;
