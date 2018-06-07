@@ -5,10 +5,10 @@ import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
+import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -111,7 +111,7 @@ public class OoOAlertDialog {
         public OoOAlertDialog build() {
             TextView tvMessage, tvTitle;
             ImageView ivImage;
-            Button btNegative, btPositive;
+            AppCompatButton btNegative, btPositive;
             View viewSeparator;
             final Dialog dialog;
             LinearLayout llButtons;
@@ -144,10 +144,10 @@ public class OoOAlertDialog {
 
             // Verifica mensagem
             if (message != null && !message.equals("")) {
-                tvTitle.setVisibility(View.VISIBLE);
+                tvMessage.setVisibility(View.VISIBLE);
                 tvMessage.setText(message);
             } else {
-                tvTitle.setVisibility(View.GONE);
+                tvMessage.setVisibility(View.GONE);
             }
 
             // Verifica titulo
@@ -161,12 +161,12 @@ public class OoOAlertDialog {
             }
 
             // Verificação para esconder layout dos botões
-            if (positiveButtonText != null || negativeButtonText != null) {
+            if (positiveButtonText != null || negativeButtonText != null || !positiveButtonText.equals("") || !negativeButtonText.equals("")) {
 
                 llButtons.setVisibility(View.VISIBLE);
 
                 // Verifica o texto do botão, ele define se existe o botão
-                if (positiveButtonText != null) {
+                if (positiveButtonText != null && !positiveButtonText.equals("")) {
 
                     btPositive.setVisibility(View.VISIBLE);
                     btPositive.setText(positiveButtonText);
@@ -199,7 +199,7 @@ public class OoOAlertDialog {
                 }
 
                 // Verifica o texto do botão, ele define se existe o botão
-                if (negativeButtonText != null) {
+                if (negativeButtonText != null && !negativeButtonText.equals("")) {
 
                     btNegative.setVisibility(View.VISIBLE);
                     btNegative.setText(negativeButtonText);
