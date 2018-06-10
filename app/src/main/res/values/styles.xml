@@ -31,4 +31,13 @@
         <item name="android:windowExitAnimation">@anim/slide_out</item>
     </style>
 
+    <style name="ZoomTheme" parent="@android:style/Theme.DeviceDefault.Light.Dialog">
+        <item name="android:windowAnimationStyle">@style/ZoomTheme1</item>
+    </style>
+
+    <style name="ZoomTheme1">
+        <item name="android:windowEnterAnimation">@anim/zoom_in</item>
+        <!--item name="android:windowExitAnimation">@anim/zoom_out</item-->
+    </style>
+
 </resources>

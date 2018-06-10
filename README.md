@@ -24,7 +24,7 @@ allprojects {
 
 ```gradle
 dependencies {
-        implementation 'com.github.Joinersa:OoOAlertDialog:1.0.0'
+        implementation 'com.github.Joinersa:OoOAlertDialog:1.0.1'
 }
 ```
 
@@ -56,7 +56,7 @@ new OoOAlertDialog.Builder(MainActivity.this)
 
 * <b>Animação:</b>
 
-Existem 3 tipos de animações pré-definidas que você pode usar: `POP`,` SLIDE` e `SIDE`. A animação pode ser definida com `setAnimation(Animation animation)`.
+Existem 4 tipos de animações pré-definidas que você pode usar: `POP`,` SLIDE`, `SIDE` e `ZOOM`. A animação pode ser definida com `setAnimation(Animation animation)`.
 
 * <b>Imagem:</b>
 

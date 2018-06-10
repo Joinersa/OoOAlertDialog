@@ -5,5 +5,5 @@ package br.com.joinersa.oooalertdialog;
  */
 
 public enum Animation {
-    POP,SIDE,SLIDE
+    POP,SIDE,SLIDE, ZOOM
 }

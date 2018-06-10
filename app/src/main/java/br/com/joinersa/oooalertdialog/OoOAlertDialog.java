@@ -124,6 +124,8 @@ public class OoOAlertDialog {
                 dialog = new Dialog(activity, R.style.SideTheme);
             } else if (animation == Animation.SLIDE) {
                 dialog = new Dialog(activity, R.style.SlideTheme);
+            } else if (animation == Animation.ZOOM) {
+                dialog = new Dialog(activity, R.style.ZoomTheme);
             } else {
                 dialog = new Dialog(activity);
             }
