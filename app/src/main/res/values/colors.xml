@@ -2,10 +2,9 @@
 <resources>
 
     <color name="backgroundColor">#ffffff</color>
-    <color name="strokeColor">#2196F3</color>
     <color name="titleColor">#1976D2</color>
     <color name="messageColor">@android:color/black</color>
-    <color name="separatorColor">@color/strokeColor</color>
+    <color name="separatorColor">#2196F3</color>
     <color name="buttonPositiveColor">@color/titleColor</color>
     <color name="buttonNegativeColor">@color/titleColor</color>
 

@@ -1,10 +1,12 @@
 package br.com.joinersa.oooalertdialog;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
+import android.support.v7.content.res.AppCompatResources;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.CardView;
 import android.view.View;
@@ -24,7 +26,13 @@ public class OoOAlertDialog {
     private int image;
     private Animation animation;
     private OnClickListener positiveButtonListener, negativeButtonListener;
-    private int positiveButtonColor, negativeButtonColor, backgroundColor;
+    private int positiveButtonColor,
+            negativeButtonColor,
+            backgroundColor,
+            positiveButtonTextColor,
+            negativeButtonTextColor,
+            titleColor,
+            messageColor;
     private boolean cancelable;
 
     public OoOAlertDialog(Builder builder) {
@@ -40,6 +48,10 @@ public class OoOAlertDialog {
         this.positiveButtonColor = builder.positiveButtonColor;
         this.negativeButtonColor = builder.negativeButtonColor;
         this.backgroundColor = builder.backgroundColor;
+        this.positiveButtonTextColor = builder.positiveButtonTextColor;
+        this.negativeButtonTextColor = builder.negativeButtonTextColor;
+        this.titleColor = builder.titleColor;
+        this.messageColor = builder.messageColor;
         this.cancelable = builder.cancelable;
     }
 
@@ -49,7 +61,13 @@ public class OoOAlertDialog {
         private int image;
         private Animation animation;
         private OnClickListener positiveButtonListener, negativeButtonListener;
-        private int positiveButtonColor, negativeButtonColor, backgroundColor;
+        private int positiveButtonColor,
+                negativeButtonColor,
+                backgroundColor,
+                positiveButtonTextColor,
+                negativeButtonTextColor,
+                titleColor,
+                messageColor;
         private boolean cancelable = true;
 
         public Builder(Activity activity) {
@@ -103,11 +121,32 @@ public class OoOAlertDialog {
             return this;
         }
 
+        public Builder setPositiveButtonTextColor(int positiveButtonTextColor) {
+            this.positiveButtonTextColor = positiveButtonTextColor;
+            return this;
+        }
+
+        public Builder setNegativeButtonTextColor(int negativeButtonTextColor) {
+            this.negativeButtonTextColor = negativeButtonTextColor;
+            return this;
+        }
+
+        public Builder setTitleColor(int titleColor) {
+            this.titleColor = titleColor;
+            return this;
+        }
+
+        public Builder setMessageColor(int messageColor) {
+            this.messageColor = messageColor;
+            return this;
+        }
+
         public Builder setCancelable(boolean cancelable) {
             this.cancelable = cancelable;
             return this;
         }
 
+        @SuppressLint("RestrictedApi")
         public OoOAlertDialog build() {
             TextView tvMessage, tvTitle;
             ImageView ivImage;
@@ -151,6 +190,10 @@ public class OoOAlertDialog {
                 if (!message.equals("")) {
                     tvMessage.setVisibility(View.VISIBLE);
                     tvMessage.setText(message);
+                    // verifica se existe uma cor para a mensagem
+                    if (messageColor != 0) {
+                        tvMessage.setTextColor(AppCompatResources.getColorStateList(activity, messageColor));
+                    }
                 } else {
                     tvMessage.setVisibility(View.GONE);
                 }
@@ -167,6 +210,12 @@ public class OoOAlertDialog {
                     viewSeparator.setVisibility(View.VISIBLE);
                     tvTitle.setVisibility(View.VISIBLE);
                     tvTitle.setText(title);
+                    // verifica se existe uma cor para o título
+                    if (titleColor != 0) {
+                        tvTitle.setTextColor(AppCompatResources.getColorStateList(activity, titleColor));
+                        // modifica a cor do separador
+                        viewSeparator.setBackgroundResource(titleColor);
+                    }
                 } else {
                     viewSeparator.setVisibility(View.GONE);
                     tvTitle.setVisibility(View.GONE);
@@ -191,8 +240,12 @@ public class OoOAlertDialog {
 
                         // Verifica a COR
                         if (positiveButtonColor != 0) {
-                            GradientDrawable bgShape = (GradientDrawable) btPositive.getBackground();
-                            bgShape.setColor(positiveButtonColor);
+                            btPositive.setSupportBackgroundTintList(AppCompatResources.getColorStateList(activity, positiveButtonColor));
+                        }
+
+                        // Verifica a Cor do texto do botão positivo
+                        if (positiveButtonTextColor != 0) {
+                            btPositive.setTextColor(AppCompatResources.getColorStateList(activity, positiveButtonTextColor));
                         }
 
                         // Verifica o LISTENER
@@ -230,8 +283,12 @@ public class OoOAlertDialog {
 
                         // Verifica a COR
                         if (negativeButtonColor != 0) {
-                            GradientDrawable bgShape = (GradientDrawable) btNegative.getBackground();
-                            bgShape.setColor(negativeButtonColor);
+                            btNegative.setSupportBackgroundTintList(AppCompatResources.getColorStateList(activity, negativeButtonColor));
+                        }
+
+                        // Verifica a Cor do texto do botão negativo
+                        if (negativeButtonTextColor != 0) {
+                            btNegative.setTextColor(AppCompatResources.getColorStateList(activity, negativeButtonTextColor));
                         }
 
                         // Verifica o LISTENER
@@ -279,7 +336,7 @@ public class OoOAlertDialog {
 
 
             if (backgroundColor != 0) {
-                cvBackgroundAlertdialog.setCardBackgroundColor(backgroundColor); // setar background modificado
+                cvBackgroundAlertdialog.setCardBackgroundColor(AppCompatResources.getColorStateList(activity, backgroundColor));
             }
 
 
