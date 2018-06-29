@@ -11,7 +11,7 @@
 
 * É necessário que o `compileSdkVersion` seja maior ou igual a <b>`26`</b>.
 
-* Adicione isto em seu arquivo root `build.gradle` _(Project: name_project)_:
+* Adicione isto em seu arquivo `build.gradle` _(Project: name_project)_:
 ```gradle
 allprojects {
   repositories {
@@ -24,7 +24,7 @@ allprojects {
 
 ```gradle
 dependencies {
-        implementation 'com.github.Joinersa:OoOAlertDialog:1.0.2'
+        implementation 'com.github.Joinersa:OoOAlertDialog:1.0.3'
 }
 ```
 
@@ -54,10 +54,6 @@ new OoOAlertDialog.Builder(MainActivity.this)
 
 ## Funções
 
-* <b>Animação:</b>
-
-Existem 4 tipos de animações pré-definidas que você pode usar: `POP`,` SLIDE`, `SIDE` e `ZOOM`. A animação pode ser definida com `setAnimation(Animation animation)`.
-
 * <b>Imagem:</b>
 
 É possível setar uma imagem no topo da janela de diálogo com o método `setImage(int id)`.
@@ -65,6 +61,10 @@ Existem 4 tipos de animações pré-definidas que você pode usar: `POP`,` SLIDE
 * <b>Título e mensagem:</b>
 
 Título e mensagem são setados respectivamente com `setTitle(String title)` e `setMessage(String message)`.
+
+* <b>Animações:</b>
+
+Existem 4 tipos de animações pré-definidas que você pode usar: `ZOOM`, `POP`, `SLIDE` e `SIDE`. A animação pode ser definida com o método: `setAnimation(Animation animation)`.
 
 * <b>Cancelável:</b>
 
@@ -82,7 +82,20 @@ Existem dois tipos de botões que podem ou não ser utilizados. Para criar os bo
 
 Os botões positivo e negativo podem ter suas cores alteradas através dos métodos: `setPositiveButtonColor(int color)` e `setNegativeButtonColor(int color)`.
 
-#### Contatos
+* <b>Cor dos textos dos Botões:</b>
+
+Para modificação das cores dos textos dos botões positivo e negativo, utilizam-se os métodos: `setPositiveButtonTextColor(int color)` e `setNegativeButtonTextColor(int color)`.
+
+* <b>Cor de Título e Separador:</b>
+
+É possível definir uma cor para o texto do título, utilizando o método: `setTitleColor(int color)`. A cor do <b>separador</b> é definida com a mesma cor do título.
+
+* <b>Cor da mensagem:</b>
+
+Para modificar a cor do texto da mensagem, utiliza-se o método: `setMessageColor(int color)`.
+
+
+## Contatos
 
 * [Facebook](https://www.facebook.com/joiner.sa)
 * [WhatsApp (+55 91 92228133)](https://api.whatsapp.com/send?phone=+559192228133)
