@@ -3,6 +3,7 @@ package br.com.joinersa.oooalertdialog;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
@@ -24,6 +25,7 @@ public class OoOAlertDialog {
     private String title, message, positiveButtonText, negativeButtonText;
     private Activity activity;
     private int image;
+    private Bitmap b_image;
     private Animation animation;
     private OnClickListener positiveButtonListener, negativeButtonListener;
     private int positiveButtonColor,
@@ -42,6 +44,7 @@ public class OoOAlertDialog {
         this.negativeButtonText = builder.negativeButtonText;
         this.activity = builder.activity;
         this.image = builder.image;
+        this.b_image = builder.b_image;
         this.animation = builder.animation;
         this.positiveButtonListener = builder.positiveButtonListener;
         this.negativeButtonListener = builder.negativeButtonListener;
@@ -59,6 +62,7 @@ public class OoOAlertDialog {
         private String title, message, positiveButtonText, negativeButtonText;
         private Activity activity;
         private int image;
+        private Bitmap b_image;
         private Animation animation;
         private OnClickListener positiveButtonListener, negativeButtonListener;
         private int positiveButtonColor,
@@ -98,6 +102,11 @@ public class OoOAlertDialog {
 
         public Builder setImage(int image) {
             this.image = image;
+            return this;
+        }
+
+        public Builder setB_image(Bitmap b_image) {
+            this.b_image = b_image;
             return this;
         }
 
@@ -326,8 +335,12 @@ public class OoOAlertDialog {
 
 
             if (image != 0) {
-
                 ivImage.setImageResource(image);
+                ivImage.setVisibility(View.VISIBLE);
+
+            } else if (b_image !=null) {
+
+                ivImage.setImageBitmap(b_image);
                 ivImage.setVisibility(View.VISIBLE);
 
             } else {
