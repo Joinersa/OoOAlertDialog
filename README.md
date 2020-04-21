@@ -98,7 +98,6 @@ Para modificar a cor do texto da mensagem, utiliza-se o método: `setMessageColo
 ## Contatos
 
 * [Facebook](https://www.facebook.com/joiner.sa)
-* [WhatsApp (+55 91 91342682)](https://api.whatsapp.com/send?phone=+559191342682)
 * [LinkedIn](https://www.linkedin.com/in/joiner-s%C3%A1-367342b7/)
 
 ## Licença
